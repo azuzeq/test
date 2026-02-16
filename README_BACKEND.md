@@ -46,7 +46,18 @@ uvicorn app.main:app --reload
 pytest -q
 ```
 
-## Database migration (manual SQL for now)
+## Database migration (Alembic)
+```bash
+export DATABASE_URL="postgresql+psycopg://postgres:postgres@localhost:5432/rpg"
+alembic upgrade head
+```
+
+Alternative manual SQL:
 ```bash
 psql "$DATABASE_URL" -f db/migrations/001_init.sql
+```
+
+## Dev helper script
+```bash
+DATABASE_URL="postgresql+psycopg://postgres:postgres@localhost:5432/rpg" ./scripts/dev_migrate.sh
 ```

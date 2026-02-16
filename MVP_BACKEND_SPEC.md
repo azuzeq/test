@@ -319,7 +319,8 @@
 - in-memory store для быстрой итерации (`app/store.py`)
 - SQLAlchemy base/config/models scaffold (`app/config.py`, `app/db.py`, `app/models.py`)
 - стартовая SQL-миграция схемы (`db/migrations/001_init.sql`)
+- Alembic scaffold + первая revision (`alembic/`, `alembic/versions/0001_init.py`)
 
 Следующий шаг:
-- добавить Alembic revisions и автозапуск миграций в dev-окружении
-- вынести session store из памяти в Redis/DB (сейчас JWT/токены in-memory)
+- вынести session store из памяти в Redis/DB (сейчас токены in-memory)
+- подключить полноценный JWT/refresh flow + logout/rotation
