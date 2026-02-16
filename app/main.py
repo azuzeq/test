@@ -6,6 +6,7 @@ from typing import Literal
 
 from fastapi import Depends, FastAPI, Header, HTTPException
 
+from .config import settings
 from .schemas import (
     CombatStateResponse,
     ProfileResponse,
@@ -17,7 +18,7 @@ from .schemas import (
 )
 from .store import Combat, CombatTurn, store
 
-app = FastAPI(title="Telegram RPG MVP API", version="0.1.0")
+app = FastAPI(title=settings.app_name, version=settings.app_version)
 
 
 def _mob_stats(level: int) -> tuple[str, int, int]:

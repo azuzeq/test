@@ -311,3 +311,15 @@
 2. Игрок 10 уровня может: зайти на арену и увидеть изменение рейтинга.
 3. Игрок может: добавить друга, отправить письмо и получить индикатор нового сообщения.
 4. Нет client-side доверия для боевой математики и валют.
+
+## 10) Реализация (текущий статус в репозитории)
+
+Сделано в коде:
+- FastAPI skeleton + auth/profile/combat endpoints (`app/main.py`)
+- in-memory store для быстрой итерации (`app/store.py`)
+- SQLAlchemy base/config/models scaffold (`app/config.py`, `app/db.py`, `app/models.py`)
+- стартовая SQL-миграция схемы (`db/migrations/001_init.sql`)
+
+Следующий шаг:
+- перевести auth/profile/combat с in-memory на PostgreSQL-репозитории
+- добавить Alembic revisions и автозапуск миграций в dev-окружении
