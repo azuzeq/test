@@ -321,5 +321,5 @@
 - стартовая SQL-миграция схемы (`db/migrations/001_init.sql`)
 
 Следующий шаг:
-- перевести auth/profile/combat с in-memory на PostgreSQL-репозитории
 - добавить Alembic revisions и автозапуск миграций в dev-окружении
+- вынести session store из памяти в Redis/DB (сейчас JWT/токены in-memory)

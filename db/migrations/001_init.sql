@@ -24,10 +24,15 @@ CREATE TABLE IF NOT EXISTS characters (
 CREATE TABLE IF NOT EXISTS combats (
   id VARCHAR(36) PRIMARY KEY,
   character_id VARCHAR(36) NOT NULL REFERENCES characters(id),
+  mob_name VARCHAR(64) NOT NULL DEFAULT 'mob_lvl_1',
   mode VARCHAR(16) NOT NULL,
   status VARCHAR(16) NOT NULL,
   turn_number INT NOT NULL DEFAULT 1,
   current_actor VARCHAR(16) NOT NULL DEFAULT 'player',
+  player_hp INT NOT NULL DEFAULT 100,
+  enemy_hp INT NOT NULL DEFAULT 100,
+  turn_expires_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  player_block_zone VARCHAR(8),
   result VARCHAR(16),
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );

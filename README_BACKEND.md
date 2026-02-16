@@ -25,6 +25,14 @@ Recommended settings (`.vscode/settings.json`):
 }
 ```
 
+
+## Storage backend mode
+By default app runs in-memory mode.
+Set PostgreSQL mode via env:
+```bash
+export STORAGE_BACKEND=postgres
+```
+
 ## Run
 ```bash
 python -m venv .venv
